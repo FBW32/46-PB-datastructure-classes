@@ -11,9 +11,7 @@
 Rewrite the following code to use the "class" syntax. 
 ```javascript
   function Clock({ template }) {
-  
-    let timer;
-  
+    
     function render() {
       let date = new Date();
   
@@ -34,15 +32,9 @@ Rewrite the following code to use the "class" syntax.
       console.log(output);
     }
   
-    this.stop = function() {
-      clearInterval(timer);
-    };
-  
     this.start = function() {
       render();
-      timer = setInterval(render, 1000);
     };
-  
   }
   
   let clock = new Clock({template: 'h:m:s'});
