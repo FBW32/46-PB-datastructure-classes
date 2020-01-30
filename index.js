@@ -68,6 +68,8 @@ class Clock {
 let clock = new Clock({template: "h:m:s"});
 clock.start();
 
+setTimeout(() => clock.stop(), 4000);
+
 // 4
 
 class TV {
