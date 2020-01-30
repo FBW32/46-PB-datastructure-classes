@@ -30,6 +30,7 @@ console.log(cylinder.getVolume());
 class Clock {
   constructor({ template }) {
     this.template = template;
+    this.timer;
   }
 
   render() {
@@ -52,13 +53,22 @@ class Clock {
     console.log(output);
   }
 
+  stop() {
+    clearInterval(this.timer);
+  }
+
   start() {
     this.render();
+    this.timer = setInterval(() => {
+      this.render();
+    }, 1000);
   }
 }
 
 let clock = new Clock({template: "h:m:s"});
 clock.start();
+
+setTimeout(() => clock.stop(), 4000);
 
 // 4
 
