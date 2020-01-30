@@ -53,6 +53,10 @@ class Clock {
     console.log(output);
   }
 
+  stop() {
+    clearInterval(this.timer);
+  }
+
   start() {
     this.render();
     this.timer = setInterval(() => {
